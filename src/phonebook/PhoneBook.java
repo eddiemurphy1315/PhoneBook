@@ -1,20 +1,30 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package phonebook;
 
-/**
- *
- * @author euric
- */
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
 public class PhoneBook {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Set Nimbus look and feel
+        try {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
+            e.printStackTrace();  // Handle any exceptions
+        }
+
+        // Start the application
+        new SplashScreen();
     }
     
 }
+
+/**
+ *
+ * @author: < Eurico Dande - 223134902 />
+ */
