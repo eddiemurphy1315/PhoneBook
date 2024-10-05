@@ -39,45 +39,52 @@ public class SignUp extends javax.swing.JFrame {
         setTitle("Sign up");
         setName("signUp"); // NOI18N
 
-        pnlSignUp.setBackground(new java.awt.Color(153, 0, 153));
+        pnlSignUp.setBackground(new java.awt.Color(232, 248, 245));
 
         lblPhoneBook.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblPhoneBook.setForeground(new java.awt.Color(255, 255, 255));
+        lblPhoneBook.setForeground(new java.awt.Color(93, 58, 155));
         lblPhoneBook.setText("PhoneBook");
 
         lblUsername.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblUsername.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsername.setForeground(new java.awt.Color(93, 58, 155));
         lblUsername.setText("Username");
 
-        txtUsername.setBackground(new java.awt.Color(102, 0, 102));
+        txtUsername.setBackground(new java.awt.Color(250, 250, 250));
         txtUsername.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtUsername.setForeground(new java.awt.Color(255, 255, 255));
-        txtUsername.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 102), 3, true));
+        txtUsername.setForeground(new java.awt.Color(72, 217, 141));
+        txtUsername.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(250, 250, 250), 3, true));
 
         lblPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblPassword.setForeground(new java.awt.Color(255, 255, 255));
+        lblPassword.setForeground(new java.awt.Color(93, 58, 155));
         lblPassword.setText("Password");
 
-        txtPassword.setBackground(new java.awt.Color(102, 0, 102));
+        txtPassword.setBackground(new java.awt.Color(250, 250, 250));
         txtPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtPassword.setForeground(new java.awt.Color(255, 255, 255));
-        txtPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 102), 3, true));
+        txtPassword.setForeground(new java.awt.Color(72, 217, 141));
+        txtPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(250, 250, 250), 3, true));
 
         chkShowPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        chkShowPassword.setForeground(new java.awt.Color(255, 255, 255));
+        chkShowPassword.setForeground(new java.awt.Color(93, 58, 155));
         chkShowPassword.setText("Show passwords");
         chkShowPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        btnSign.setBackground(new java.awt.Color(255, 111, 97));
         btnSign.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnSign.setForeground(new java.awt.Color(102, 0, 102));
+        btnSign.setForeground(new java.awt.Color(250, 250, 250));
         btnSign.setText("Sign Up");
         btnSign.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSign.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignActionPerformed(evt);
+            }
+        });
 
         lblDoNotHaveAnAccount.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblDoNotHaveAnAccount.setForeground(new java.awt.Color(255, 255, 255));
+        lblDoNotHaveAnAccount.setForeground(new java.awt.Color(93, 58, 155));
         lblDoNotHaveAnAccount.setText("Already have an account?");
 
         lblLogin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblLogin.setForeground(new java.awt.Color(255, 111, 97));
         lblLogin.setText("Login");
         lblLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblLogin.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -87,30 +94,30 @@ public class SignUp extends javax.swing.JFrame {
         });
 
         lblFirstName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblFirstName.setForeground(new java.awt.Color(255, 255, 255));
+        lblFirstName.setForeground(new java.awt.Color(93, 58, 155));
         lblFirstName.setText("First name");
 
-        txtFirstName.setBackground(new java.awt.Color(102, 0, 102));
+        txtFirstName.setBackground(new java.awt.Color(250, 250, 250));
         txtFirstName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtFirstName.setForeground(new java.awt.Color(255, 255, 255));
-        txtFirstName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 102), 3, true));
+        txtFirstName.setForeground(new java.awt.Color(72, 217, 141));
+        txtFirstName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(250, 250, 250), 3, true));
 
-        txtLastName.setBackground(new java.awt.Color(102, 0, 102));
+        txtLastName.setBackground(new java.awt.Color(250, 250, 250));
         txtLastName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtLastName.setForeground(new java.awt.Color(255, 255, 255));
-        txtLastName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 102), 3, true));
+        txtLastName.setForeground(new java.awt.Color(72, 217, 141));
+        txtLastName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(250, 250, 250), 3, true));
 
         lblLastName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblLastName.setForeground(new java.awt.Color(255, 255, 255));
+        lblLastName.setForeground(new java.awt.Color(93, 58, 155));
         lblLastName.setText("Last name");
 
-        txtConfirmPassword.setBackground(new java.awt.Color(102, 0, 102));
+        txtConfirmPassword.setBackground(new java.awt.Color(250, 250, 250));
         txtConfirmPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtConfirmPassword.setForeground(new java.awt.Color(255, 255, 255));
-        txtConfirmPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 102), 3, true));
+        txtConfirmPassword.setForeground(new java.awt.Color(72, 217, 141));
+        txtConfirmPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(250, 250, 250), 3, true));
 
         lblConfirmPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblConfirmPassword.setForeground(new java.awt.Color(255, 255, 255));
+        lblConfirmPassword.setForeground(new java.awt.Color(93, 58, 155));
         lblConfirmPassword.setText("Confirm password");
 
         javax.swing.GroupLayout pnlSignUpLayout = new javax.swing.GroupLayout(pnlSignUp);
@@ -209,6 +216,10 @@ public class SignUp extends javax.swing.JFrame {
         this.dispose();
         new Login();
     }//GEN-LAST:event_lblLoginMouseClicked
+
+    private void btnSignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSignActionPerformed
 
     /**
      * @param args the command line arguments
