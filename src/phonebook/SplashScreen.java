@@ -17,7 +17,7 @@ public class SplashScreen extends javax.swing.JFrame {
         @Override
         protected void paintDeterminate(Graphics g, JComponent c) {
             Graphics2D g2d = (Graphics2D) g;
-            g2d.setColor(Color.WHITE);  // Set your desired progress color here
+            g2d.setColor(Color.decode("#48D98D"));  // Set your desired progress color here
 
         // Calculate the size of the filled progress
         int width = progressBar.getWidth() * progressBar.getValue() / progressBar.getMaximum();
@@ -78,20 +78,20 @@ public class SplashScreen extends javax.swing.JFrame {
         setName("splashScreen"); // NOI18N
         setUndecorated(true);
 
-        pnlMain.setBackground(new java.awt.Color(153, 0, 153));
+        pnlMain.setBackground(new java.awt.Color(232, 248, 245));
 
         lblPhoneBook.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/phonebook.png"))); // NOI18N
 
-        prgProgressBar.setBackground(new java.awt.Color(204, 0, 204));
+        prgProgressBar.setBackground(new java.awt.Color(255, 255, 255));
         prgProgressBar.setForeground(new java.awt.Color(0, 0, 0));
         prgProgressBar.setMaximumSize(new java.awt.Dimension(146, 5));
         prgProgressBar.setMinimumSize(new java.awt.Dimension(146, 5));
         prgProgressBar.setPreferredSize(new java.awt.Dimension(146, 5));
 
-        lblTextPhoneBook.setForeground(new java.awt.Color(102, 0, 102));
+        lblTextPhoneBook.setForeground(new java.awt.Color(72, 217, 141));
         lblTextPhoneBook.setText("Phonebook");
 
-        lblGroupNumber.setForeground(new java.awt.Color(102, 0, 102));
+        lblGroupNumber.setForeground(new java.awt.Color(72, 217, 141));
         lblGroupNumber.setText("Group 70");
 
         javax.swing.GroupLayout pnlMainLayout = new javax.swing.GroupLayout(pnlMain);
