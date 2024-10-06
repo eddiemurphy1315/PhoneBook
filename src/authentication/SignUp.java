@@ -1,5 +1,17 @@
 package authentication;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+
+import validations.AuthenticationFunctions;
+
 public class SignUp extends javax.swing.JFrame {
 
     public SignUp() {
@@ -62,20 +74,26 @@ public class SignUp extends javax.swing.JFrame {
         txtPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtPassword.setForeground(new java.awt.Color(72, 217, 141));
         txtPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(250, 250, 250), 3, true));
+        txtPassword.setEchoChar('*');
 
         chkShowPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         chkShowPassword.setForeground(new java.awt.Color(93, 58, 155));
         chkShowPassword.setText("Show passwords");
         chkShowPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        chkShowPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                chkShowPasswordMouseClicked(evt);
+            }
+        });
 
         btnSign.setBackground(new java.awt.Color(255, 111, 97));
         btnSign.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSign.setForeground(new java.awt.Color(250, 250, 250));
         btnSign.setText("Sign Up");
         btnSign.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSign.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSignActionPerformed(evt);
+        btnSign.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSignMouseClicked(evt);
             }
         });
 
@@ -115,6 +133,7 @@ public class SignUp extends javax.swing.JFrame {
         txtConfirmPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtConfirmPassword.setForeground(new java.awt.Color(72, 217, 141));
         txtConfirmPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(250, 250, 250), 3, true));
+        txtConfirmPassword.setEchoChar('*');
 
         lblConfirmPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblConfirmPassword.setForeground(new java.awt.Color(93, 58, 155));
@@ -217,9 +236,82 @@ public class SignUp extends javax.swing.JFrame {
         new Login();
     }//GEN-LAST:event_lblLoginMouseClicked
 
-    private void btnSignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSignActionPerformed
+    private void chkShowPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chkShowPasswordMouseClicked
+        JPasswordField [] txtPasswordFields = {txtPassword, txtConfirmPassword};
+        Login.displayOrHidePassword(txtPasswordFields);
+    }//GEN-LAST:event_chkShowPasswordMouseClicked
+
+    private void btnSignMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSignMouseClicked
+        String username = txtUsername.getText().trim();
+        String firstName = txtFirstName.getText().trim();
+        String lastName = txtLastName.getText().trim();
+        char [] passwordChars = txtPassword.getPassword();
+        String password = new String(passwordChars).trim();
+        char [] passwordConfirmChars = txtConfirmPassword.getPassword();
+        String passwordConfirm = new String(passwordConfirmChars).trim();
+
+        if (!AuthenticationFunctions.validateUsername(username)) return;
+        if (!AuthenticationFunctions.validateName(firstName, "First Name")) return;
+        if (!AuthenticationFunctions.validateName(lastName, "Last Name")) return;
+        if (!AuthenticationFunctions.validatePasswordFormat(password)) return;
+        if (!AuthenticationFunctions.validatePasswordMatch(password, passwordConfirm)) return;
+
+        // All validations passed, now insert the user data into the CSV file
+            if(appendUserDataToCSV(Integer.toString(getNextUserId()), firstName, lastName, username, AuthenticationFunctions.hashPassword(password))){
+                JOptionPane.showMessageDialog(this, "Sign-up successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                this.dispose();
+                new Login(); // Redirect the user...
+            } else {
+                JOptionPane.showMessageDialog(this, "Error writing to file: ", "File Error", JOptionPane.ERROR_MESSAGE);
+            }
+    }//GEN-LAST:event_btnSignMouseClicked
+
+    private static boolean appendUserDataToCSV(String userID, String firstName, String lastName, String username, String password) {
+        String filePath = "src\\storage\\user.csv"; // Adjust path as necessary
+        try (FileWriter fileWriter = new FileWriter(filePath, true); // Set to true to append
+             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
+    
+            // Create the CSV record as a String
+            String csvRecord = String.join(",", userID, firstName, lastName, username, password);
+            
+            // Write the record to the CSV file
+            bufferedWriter.write(csvRecord);
+            bufferedWriter.newLine(); // Add a new line after the record
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace(); // Handle exceptions properly in production
+            return false;
+        }
+    }
+
+    private int getNextUserId() {
+        String filePath = "src\\storage\\user.csv"; // Adjust the path as necessary
+        int maxUserId = 0;
+
+        try (Scanner scanner = new Scanner(new File(filePath))) {
+            // Skip the header line
+            if (scanner.hasNextLine()) {
+                scanner.nextLine();
+            }
+
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String[] userDetails = line.split(",");
+
+                // Assuming userID is in the first position (index 0)
+                if (userDetails.length > 0) {
+                    int userID = Integer.parseInt(userDetails[0].trim());
+                    if (userID > maxUserId) {
+                        maxUserId = userID;
+                    }
+                }
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace(); // Handle exceptions appropriately
+        }
+
+        return maxUserId + 1; // Increment to get the next available userID
+    }
 
     /**
      * @param args the command line arguments
