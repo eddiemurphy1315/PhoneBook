@@ -158,6 +158,7 @@
                 </LineBorder>
               </Border>
             </Property>
+            <Property name="echoChar" type="char" value="*"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JToggleButton" name="btnLogin">
@@ -193,6 +194,9 @@
               <Color id="Hand Cursor"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="chkShowPasswordMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblPhoneBook">
           <Properties>

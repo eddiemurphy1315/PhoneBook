@@ -89,7 +89,7 @@ public class SplashScreen extends javax.swing.JFrame {
         prgProgressBar.setPreferredSize(new java.awt.Dimension(146, 5));
 
         lblTextPhoneBook.setForeground(new java.awt.Color(72, 217, 141));
-        lblTextPhoneBook.setText("Phonebook");
+        lblTextPhoneBook.setText("Phonebook V1.0");
 
         lblGroupNumber.setForeground(new java.awt.Color(72, 217, 141));
         lblGroupNumber.setText("Group 70");
