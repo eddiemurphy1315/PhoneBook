@@ -178,9 +178,9 @@ public class DisplayAllContacts extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SearchButton)
-                    .addComponent(DisplayAllContacsButton))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(DisplayAllContacsButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(SearchButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NameLabel)
@@ -218,7 +218,7 @@ public class DisplayAllContacts extends javax.swing.JFrame {
         
         //Search through the contact list
         for (Contact contact : contactList){
-            if(contact.firstName.equalsIgnoreCase(searchQuery) || contact.phoneNumber.equals(searchQuery)) {
+            if(contact.getFirstName().equalsIgnoreCase(searchQuery) || contact.getPhoneNumber().equals(searchQuery)) {
                 TextArea.setText(contact.toString());
                 found = true;
                 break;
