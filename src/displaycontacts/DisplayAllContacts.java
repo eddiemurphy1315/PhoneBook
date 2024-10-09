@@ -218,7 +218,7 @@ public class DisplayAllContacts extends javax.swing.JFrame {
         
         //Search through the contact list
         for (Contact contact : contactList){
-            if(contact.firstName.equalsIgnoreCase(searchQuery) || contact.phoneNumber.equals(searchQuery)) {
+            if(contact.getFirstName().equalsIgnoreCase(searchQuery) || contact.getPhoneNumber().equals(searchQuery)) {
                 TextArea.setText(contact.toString());
                 found = true;
                 break;
