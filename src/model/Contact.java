@@ -2,9 +2,9 @@ package model;
 
 public class Contact {
     private String contactID;
-    private String firstName;
+    public String firstName;
     private String lastName;
-    private String phoneNumber;
+    public String phoneNumber;
     private String email;
     private String address;
     private String contactGroup;  // Could be like "Family", "Friends", etc.
