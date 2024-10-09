@@ -238,7 +238,7 @@ public class DisplayAllContacts extends javax.swing.JFrame {
     }//GEN-LAST:event_SearchFieldActionPerformed
 
     private void displayContacts(){
-        TextArea.setText(""); //Clearnthe TextArea First.
+        TextArea.setText(""); //Clear the TextArea First.
         for(Contact contact : contactList){
             TextArea.append(contact.toString() + "\n"); //Append each contact to the TextArea
         }

@@ -19,7 +19,7 @@ public class SplashScreen extends javax.swing.JFrame {
             Graphics2D g2d = (Graphics2D) g;
             g2d.setColor(Color.decode("#48D98D"));  // Set your desired progress color here
 
-        // Calculate the size of the filled progress
+        // Calculate the length of the filled progress
         int width = progressBar.getWidth() * progressBar.getValue() / progressBar.getMaximum();
         int height = progressBar.getHeight();
 
