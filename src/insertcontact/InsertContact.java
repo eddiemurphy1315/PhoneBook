@@ -4,6 +4,8 @@
  */
 package insertcontact;
 
+import model.Contact;
+
 /**
  *
  * @author HEIR OF ATTICUS
@@ -14,6 +16,7 @@ public class InsertContact extends javax.swing.JFrame {
      * Creates new form InsertContact
      */
     public InsertContact() {
+        
         initComponents();
     }
 
@@ -26,21 +29,252 @@ public class InsertContact extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        txtContact = new javax.swing.JLabel();
+        firstName = new javax.swing.JLabel();
+        txtLastName = new javax.swing.JLabel();
+        phoneNumber = new javax.swing.JLabel();
+        email = new javax.swing.JLabel();
+        txtFirstNameField = new javax.swing.JTextField();
+        lastNameField = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        txtEmailField = new javax.swing.JTextField();
+        txtphysicalAdress = new javax.swing.JLabel();
+        txtphysicalAdressField = new javax.swing.JTextField();
+        btnDone = new javax.swing.JToggleButton();
+        txtphysicalAdress1 = new javax.swing.JLabel();
+        txtphysicalAddressField1 = new javax.swing.JTextField();
+        btnUpdate = new javax.swing.JToggleButton();
+        jButton1 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(232, 248, 245));
+
+        txtContact.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtContact.setForeground(new java.awt.Color(93, 58, 155));
+        txtContact.setText("New Contact");
+
+        firstName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        firstName.setForeground(new java.awt.Color(93, 58, 155));
+        firstName.setText("First Name");
+
+        txtLastName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtLastName.setForeground(new java.awt.Color(93, 58, 155));
+        txtLastName.setText("Last Name");
+
+        phoneNumber.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        phoneNumber.setForeground(new java.awt.Color(93, 58, 155));
+        phoneNumber.setText("Phone Number");
+
+        email.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        email.setForeground(new java.awt.Color(93, 58, 155));
+        email.setText("Email");
+
+        txtFirstNameField.setBackground(new java.awt.Color(250, 250, 250));
+        txtFirstNameField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtFirstNameField.setBorder(null);
+        txtFirstNameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFirstNameFieldActionPerformed(evt);
+            }
+        });
+
+        lastNameField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lastNameField.setBorder(null);
+        lastNameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lastNameFieldActionPerformed(evt);
+            }
+        });
+
+        jTextField3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jTextField3.setBorder(null);
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+
+        txtEmailField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtEmailField.setBorder(null);
+
+        txtphysicalAdress.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtphysicalAdress.setForeground(new java.awt.Color(93, 58, 155));
+        txtphysicalAdress.setText("Physical Address");
+
+        txtphysicalAdressField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtphysicalAdressField.setBorder(null);
+        txtphysicalAdressField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtphysicalAdressFieldActionPerformed(evt);
+            }
+        });
+
+        btnDone.setBackground(new java.awt.Color(255, 111, 97));
+        btnDone.setText("Insert");
+        btnDone.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDoneMouseClicked(evt);
+            }
+        });
+        btnDone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDoneActionPerformed(evt);
+            }
+        });
+
+        txtphysicalAdress1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtphysicalAdress1.setForeground(new java.awt.Color(93, 58, 155));
+        txtphysicalAdress1.setText("Contact Group");
+
+        txtphysicalAddressField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtphysicalAddressField1.setBorder(null);
+
+        btnUpdate.setBackground(new java.awt.Color(255, 111, 97));
+        btnUpdate.setText("Update");
+        btnUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnUpdateMouseClicked(evt);
+            }
+        });
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
+
+        jButton1.setBackground(new java.awt.Color(255, 111, 97));
+        jButton1.setText("Back");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(firstName, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtFirstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtContact)
+                            .addComponent(phoneNumber)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtphysicalAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtphysicalAdressField, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtphysicalAdress1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 64, Short.MAX_VALUE))
+                                    .addComponent(txtphysicalAddressField1)
+                                    .addComponent(txtEmailField)
+                                    .addComponent(lastNameField)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btnUpdate)
+                                    .addComponent(jButton1))))
+                        .addGap(40, 40, 40))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnDone)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(33, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtContact)
+                    .addComponent(jButton1))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtLastName)
+                    .addComponent(firstName))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFirstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(email)
+                    .addComponent(phoneNumber))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtphysicalAdress1)
+                    .addComponent(txtphysicalAdress))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtphysicalAddressField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtphysicalAdressField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnUpdate)
+                    .addComponent(btnDone))
+                .addGap(40, 40, 40))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnDoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDoneMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDoneMouseClicked
+
+    private void btnUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUpdateMouseClicked
+
+    private void btnDoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDoneActionPerformed
+
+    private void txtphysicalAdressFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtphysicalAdressFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtphysicalAdressFieldActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void lastNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lastNameFieldActionPerformed
+
+    private void txtFirstNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFirstNameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFirstNameFieldActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +312,22 @@ public class InsertContact extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton btnDone;
+    private javax.swing.JToggleButton btnUpdate;
+    private javax.swing.JLabel email;
+    private javax.swing.JLabel firstName;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField lastNameField;
+    private javax.swing.JLabel phoneNumber;
+    private javax.swing.JLabel txtContact;
+    private javax.swing.JTextField txtEmailField;
+    private javax.swing.JTextField txtFirstNameField;
+    private javax.swing.JLabel txtLastName;
+    private javax.swing.JTextField txtphysicalAddressField1;
+    private javax.swing.JLabel txtphysicalAdress;
+    private javax.swing.JLabel txtphysicalAdress1;
+    private javax.swing.JTextField txtphysicalAdressField;
     // End of variables declaration//GEN-END:variables
 }
