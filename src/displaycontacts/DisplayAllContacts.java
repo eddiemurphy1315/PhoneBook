@@ -177,11 +177,23 @@ public class DisplayAllContacts extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addContainerGap(105, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SearchButton))
                 .addGap(24, 24, 24)
+=======
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addComponent(UpdateButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(DisplayAllContacsButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(SearchButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+>>>>>>> eb92a966cb7b37bf031be34c9131b030aae0cc57
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(DisplayAllContacsButton)
                     .addComponent(InsertButton))
@@ -222,8 +234,13 @@ public class DisplayAllContacts extends javax.swing.JFrame {
         TextArea.setText("");
         
         //Search through the contact list
+<<<<<<< HEAD
         /*for (Contact contact : contactList){
             if(contact.firstName.equalsIgnoreCase(searchQuery) || contact.phoneNumber.equals(searchQuery)) {
+=======
+        for (Contact contact : contactList){
+            if(contact.getFirstName().equalsIgnoreCase(searchQuery) || contact.getPhoneNumber().equals(searchQuery)) {
+>>>>>>> eb92a966cb7b37bf031be34c9131b030aae0cc57
                 TextArea.setText(contact.toString());
                 found = true;
                 break;

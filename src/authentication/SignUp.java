@@ -96,6 +96,11 @@ public class SignUp extends javax.swing.JFrame {
                 btnSignMouseClicked(evt);
             }
         });
+        btnSign.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignActionPerformed(evt);
+            }
+        });
 
         lblDoNotHaveAnAccount.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblDoNotHaveAnAccount.setForeground(new java.awt.Color(93, 58, 155));
@@ -265,6 +270,10 @@ public class SignUp extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Error writing to file: ", "File Error", JOptionPane.ERROR_MESSAGE);
             }
     }//GEN-LAST:event_btnSignMouseClicked
+
+    private void btnSignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSignActionPerformed
 
     private static boolean appendUserDataToCSV(String userID, String firstName, String lastName, String username, String password) {
         String filePath = "src\\storage\\user.csv"; // Adjust path as necessary
