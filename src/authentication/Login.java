@@ -1,11 +1,14 @@
 package authentication;
 
+import displaycontacts.DisplayAllContacts;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
+import model.Contact;
+import phonebook.LinkedList;
 
 import validations.AuthenticationFunctions;
 
@@ -184,7 +187,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPasswordActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-    
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnLoginMouseClicked
@@ -201,9 +204,17 @@ public class Login extends javax.swing.JFrame {
         if (isAuthenticated) {
             JOptionPane.showMessageDialog(this, "Login successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
             
+            LinkedList contacts = new LinkedList();
+            contacts.insertContact(new Contact("1","Eurico","Dos Antos","098645","euricodosantos@gmail.com","Mercury","Enemy","2"));
+            contacts.insertContact(new Contact("2","Vali","Namibia","092323","valinamibia@gmail.com","villa","Family","3"));
+            contacts.insertContact(new Contact("3","Murphy","Dande","098690","murphydande@gmail.com","katatatura","friend","4"));
+            contacts.insertContact(new Contact("4","Ben","Ten","098667","benteninnit@gmail.com","Mercury","friend","5"));
+            contacts.insertContact(new Contact("5","Enock","Niger","098666","enockniger@gmail.com","capitalResidence","friend","6"));
+
+            
             // Proceed to the next screen (e.g., dispose of the login screen, open a dashboard)
-            //this.dispose();  // Close the login window
-            //new Dashboard().setVisible(true);  // Assuming you have a Dashboard JFrame
+            this.dispose();  // Close the login window
+            new DisplayAllContacts(contacts).setVisible(true);  // Assuming you have a Dashboard JFrame
         } else {
             JOptionPane.showMessageDialog(this, "Invalid username or password. Please try again.",
                     "Login Failed", JOptionPane.ERROR_MESSAGE);

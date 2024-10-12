@@ -1,5 +1,7 @@
 package phonebook;
 
+import java.awt.TextArea;
+import javax.swing.JTextArea;
 import model.Contact;
 
 public class LinkedList {
@@ -31,16 +33,28 @@ public class LinkedList {
         this.length = length + 1;
     }
 
-    public void displayContacts(){
+    public void displayContacts(JTextArea textArea, LinkedList contacts){
         if (head != null) {
             Node temp = head;
             while (temp != null) {
-                System.out.println(temp.contact);
+                textArea.append(contacts.toString(temp) + "\n"); //Append each contact to the TextArea
                 temp = temp.next;
             }
         } else {
             System.out.println("No contacts found");
         }
+    }
+    public  String toString(Node node){
+        
+        return " " +
+                
+                " " + node.contact.getFirstName() + '\'' +
+                " \t\t" + node.contact.getLastName() + '\'' +
+                " \t" + node.contact.getPhoneNumber() + '\'' +
+                " \t" + node.contact.getEmail() + '\'' +
+                " \t" + node.contact.getAddress() + '\'' +
+                " \t" + node.contact.getContactGroup() + '\'';
+        
     }
 
     // sorting the linked list by using Merge Sort
@@ -48,7 +62,7 @@ public class LinkedList {
         head = mergeSort(head);
     }
 
-    private Node mergeSort(Node head) {
+    public Node mergeSort(Node head) {
         if (head == null || head.next == null) {
             return head;
         }

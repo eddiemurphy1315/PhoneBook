@@ -1,42 +1,27 @@
 package displaycontacts;
-import java.util.LinkedList;
-import javax.swing.JOptionPane;
-import model.Contact;
+
+import phonebook.LinkedList;
+
 /**
  *
  * @author Murphy Sisamu 223055190
  */
 
-//Represents a contact with name, phone, and email.
-/*class Contact{
-    String name;
-    String phone;
-    String email;
-    
-    public Contact(String name, String phone, String email){
-        this.name = name;
-        this.phone = phone;
-        this.email = email;
-    }
-    public String toString() {
-        return " " + name + "    \t\t" + phone + "        \t\t" + email ;
-    }
-}*/
 
 public class DisplayAllContacts extends javax.swing.JFrame {
 
-    LinkedList<Contact> contactList = new LinkedList<>();
+    public LinkedList contacts; 
+   
+
     /**
      * Creates new form DisplayAllContacts
+     * @param contacts
      */
-    public DisplayAllContacts() {
+    //  public void DisplayContacts(){
+    public DisplayAllContacts(LinkedList contacts) {
         initComponents();
-        //populateContacts();
-        
-        contactList.add(new Contact("1","Murphy", "Sisamu", "+264813535449", "murphysisamu1315@gmail.com", "Khomasdal", "Friend", "3"));
-        contactList.add(new Contact("2", "Klaus", "Sisamu" , "264853535449" , "kluassisamu1807@gmail.com", "Dorado Park", "Family", "3"));
-        contactList.add(new Contact ("3", "Eurico", "Dande" , "264813487560" , "euricodande@gmail.com", "Student Stay", "Friend", "3"));
-    
+       this.contacts = (contacts != null) ? contacts : new LinkedList();
+       this.contacts = contacts;
         // Add placeholder functionality to SearchField
         SearchField.setText("Search...");
         SearchField.setForeground(new java.awt.Color(250, 250, 250));  // Gray text to indicate it's a placeholder
@@ -73,16 +58,20 @@ public class DisplayAllContacts extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSlider1 = new javax.swing.JSlider();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TextArea = new javax.swing.JTextArea();
-        NameLabel = new javax.swing.JLabel();
+        FirstNameLabel = new javax.swing.JLabel();
         PhoneLabel = new javax.swing.JLabel();
         EmailLabel = new javax.swing.JLabel();
         SearchField = new javax.swing.JTextField();
         SearchButton = new javax.swing.JButton();
         DisplayAllContacsButton = new javax.swing.JButton();
-        UpdateButton = new javax.swing.JButton();
+        AddressLabel = new javax.swing.JLabel();
+        ContactGroupLabel = new javax.swing.JLabel();
+        LastNameLabel = new javax.swing.JLabel();
+        InsertButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(786, 466));
@@ -103,8 +92,8 @@ public class DisplayAllContacts extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TextArea);
 
-        NameLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        NameLabel.setText("Names");
+        FirstNameLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        FirstNameLabel.setText("First name");
 
         PhoneLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         PhoneLabel.setText("Phone");
@@ -134,61 +123,79 @@ public class DisplayAllContacts extends javax.swing.JFrame {
             }
         });
 
-        UpdateButton.setBackground(new java.awt.Color(255, 111, 97));
-        UpdateButton.setText("Update contact");
+        AddressLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        AddressLabel.setText("address");
+
+        ContactGroupLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ContactGroupLabel.setText("Contact Group");
+
+        LastNameLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LastNameLabel.setText("Last name");
+
+        InsertButton.setBackground(new java.awt.Color(255, 111, 97));
+        InsertButton.setText("Insert Contact");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(DisplayAllContacsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(SearchButton))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(FirstNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)
+                                .addComponent(LastNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(NameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(169, 169, 169)
+                                .addGap(18, 18, 18)
                                 .addComponent(PhoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(74, 74, 74)
                                 .addComponent(EmailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(165, 165, 165))
+                                .addGap(88, 88, 88)
+                                .addComponent(AddressLabel)
+                                .addGap(61, 61, 61)
+                                .addComponent(ContactGroupLabel))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(SearchButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(DisplayAllContacsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(17, 17, 17))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(InsertButton, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 667, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(68, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(UpdateButton)
-                .addGap(95, 95, 95))
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 752, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
-                .addComponent(UpdateButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
+                .addContainerGap(105, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SearchButton)
-                    .addComponent(DisplayAllContacsButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SearchButton))
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NameLabel)
+                    .addComponent(DisplayAllContacsButton)
+                    .addComponent(InsertButton))
+                .addGap(50, 50, 50)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FirstNameLabel)
+                    .addComponent(LastNameLabel)
                     .addComponent(PhoneLabel)
-                    .addComponent(EmailLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84))
+                    .addComponent(EmailLabel)
+                    .addComponent(AddressLabel)
+                    .addComponent(ContactGroupLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -199,15 +206,13 @@ public class DisplayAllContacts extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void TextAreaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_TextAreaAncestorAdded
-        TextArea.setEditable(false);
-    }//GEN-LAST:event_TextAreaAncestorAdded
 
     private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
         String searchQuery = SearchField.getText().trim();
@@ -217,7 +222,7 @@ public class DisplayAllContacts extends javax.swing.JFrame {
         TextArea.setText("");
         
         //Search through the contact list
-        for (Contact contact : contactList){
+        /*for (Contact contact : contactList){
             if(contact.firstName.equalsIgnoreCase(searchQuery) || contact.phoneNumber.equals(searchQuery)) {
                 TextArea.setText(contact.toString());
                 found = true;
@@ -226,23 +231,27 @@ public class DisplayAllContacts extends javax.swing.JFrame {
         }
         if (!found) {
             TextArea.setText("Contact not found!");
-        }
+        }*/
     }//GEN-LAST:event_SearchButtonActionPerformed
 
     private void DisplayAllContacsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisplayAllContacsButtonActionPerformed
-        displayContacts(); // Call method to display contacts when the button is pressed
+       contacts.displayContacts(TextArea , contacts); // Call method to display contacts when the button is pressed
     }//GEN-LAST:event_DisplayAllContacsButtonActionPerformed
 
     private void SearchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SearchFieldActionPerformed
 
-    private void displayContacts(){
+    private void TextAreaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_TextAreaAncestorAdded
+        TextArea.setEditable(false);
+    }//GEN-LAST:event_TextAreaAncestorAdded
+
+    /*private void displayContacts(){
         TextArea.setText(""); //Clear the TextArea First.
         for(Contact contact : contactList){
             TextArea.append(contact.toString() + "\n"); //Append each contact to the TextArea
         }
-    }
+    }*/
     
     public static void main(String args[]) {
        
@@ -267,22 +276,26 @@ public class DisplayAllContacts extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DisplayAllContacts().setVisible(true);
+                new DisplayAllContacts(null).setVisible(true);
                 
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AddressLabel;
+    private javax.swing.JLabel ContactGroupLabel;
     private javax.swing.JButton DisplayAllContacsButton;
     private javax.swing.JLabel EmailLabel;
-    private javax.swing.JLabel NameLabel;
+    private javax.swing.JLabel FirstNameLabel;
+    private javax.swing.JButton InsertButton;
+    private javax.swing.JLabel LastNameLabel;
     private javax.swing.JLabel PhoneLabel;
     private javax.swing.JButton SearchButton;
     private javax.swing.JTextField SearchField;
     private javax.swing.JTextArea TextArea;
-    private javax.swing.JButton UpdateButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSlider jSlider1;
     // End of variables declaration//GEN-END:variables
 }
