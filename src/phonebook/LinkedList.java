@@ -10,14 +10,14 @@ import model.Contact;
 
 public class LinkedList {
     // Fields definition
-    Node head = null;
+    public Node head = null;
     Node tail = null;
     int length = 0;
 
     // Node class
-    private class Node {
-        private Contact contact;
-        private Node next;
+    public class Node {
+        public Contact contact;
+        public Node next;
 
         public Node(Contact contact) {
             this.contact = contact;
@@ -36,6 +36,7 @@ public class LinkedList {
         }
         this.length = length + 1;
     }
+
 
     public void displayContacts(JTextArea textArea, LinkedList contacts) {
         if (head != null) {
@@ -162,6 +163,47 @@ public class LinkedList {
 
         return contacts; // Return the LinkedList of contacts for the user
     }
+
+    //When displaying
+    public Node linearSearchName(String name){
+        if (isEmpty()){
+            JOptionPane.showMessageDialog(null, "The list is empty.", "No contacts", JOptionPane.INFORMATION_MESSAGE);
+            return null;
+        } else {
+            var temp = this.head;
+            while (temp != null){
+                if(temp.contact.getFirstName().equals(name) || temp.contact.getLastName().equals(name))     
+                    return temp;
+                    
+                temp = temp.next;
+            }
+            return null;
+        }
+    }
+
+    //When displaying
+    public Contact linearSearchNumber(String phoneNumber, String loggedInUserID){
+        if (isEmpty()){
+            JOptionPane.showMessageDialog(null, "The list is empty.", "No contacts", JOptionPane.INFORMATION_MESSAGE);
+            return null;
+        } else {
+            var temp = this.head;
+            while (temp != null){
+                if(temp.contact.getPhoneNumber().equals(phoneNumber) && temp.contact.getUserID().equals(loggedInUserID)){  
+                    JOptionPane.showMessageDialog(null, "Contact found successfully", "Contact found", JOptionPane.INFORMATION_MESSAGE);
+                    return temp.contact;
+                }
+                temp = temp.next;
+            }
+            JOptionPane.showMessageDialog(null, "The contact is not in the list.", "Not found", JOptionPane.INFORMATION_MESSAGE);
+            return null;
+        }
+    }
+
+    private boolean isEmpty(){
+        return head == null;
+    }
+
 }
 
 /**

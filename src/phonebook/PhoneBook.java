@@ -1,7 +1,5 @@
 package phonebook;
 
-import model.Contact;
-
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -21,9 +19,8 @@ public class PhoneBook {
         }
 
         // Start the application
-        //new SplashScreen();
-        //contacts.displayContacts();
-        //System.out.println(contacts.length);
+        new SplashScreen();
+    
     }
     
 }
