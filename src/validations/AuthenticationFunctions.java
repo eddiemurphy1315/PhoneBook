@@ -16,7 +16,6 @@ import javax.swing.JOptionPane;
 
 import model.Contact;
 import phonebook.LinkedList;
-import phonebook.LinkedList.Node;
 
 public class AuthenticationFunctions {
     private static String loggedInUserID;

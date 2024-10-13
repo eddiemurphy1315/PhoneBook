@@ -62,7 +62,8 @@ public class DisplayAllContacts extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -95,8 +96,10 @@ public class DisplayAllContacts extends javax.swing.JFrame {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 TextAreaAncestorAdded(evt);
             }
+
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
+
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
@@ -112,7 +115,7 @@ public class DisplayAllContacts extends javax.swing.JFrame {
         EmailLabel.setText("Address");
 
         SearchField.setBackground(new java.awt.Color(250, 250, 250));
-        SearchField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(250, 250, 250), 3, true));
+        SearchField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(250, 250, 250), 5, true));
         SearchField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SearchFieldActionPerformed(evt);
@@ -120,7 +123,7 @@ public class DisplayAllContacts extends javax.swing.JFrame {
         });
 
         SearchButton.setBackground(new java.awt.Color(255, 111, 97));
-        SearchButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        SearchButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         SearchButton.setForeground(new java.awt.Color(250, 250, 250));
         SearchButton.setText("Search");
         SearchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -131,7 +134,7 @@ public class DisplayAllContacts extends javax.swing.JFrame {
         });
 
         DisplayAllContacsButton.setBackground(new java.awt.Color(255, 111, 97));
-        DisplayAllContacsButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        DisplayAllContacsButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         DisplayAllContacsButton.setForeground(new java.awt.Color(250, 250, 250));
         DisplayAllContacsButton.setText("Display All Contacts");
         DisplayAllContacsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -142,7 +145,7 @@ public class DisplayAllContacts extends javax.swing.JFrame {
         });
 
         UpdateButton.setBackground(new java.awt.Color(255, 111, 97));
-        UpdateButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        UpdateButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         UpdateButton.setForeground(new java.awt.Color(250, 250, 250));
         UpdateButton.setText("Update Contact");
         UpdateButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -163,25 +166,25 @@ public class DisplayAllContacts extends javax.swing.JFrame {
 
         txtUpdate.setBackground(new java.awt.Color(250, 250, 250));
         txtUpdate.setToolTipText("Enter a phone number");
-        txtUpdate.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(250, 250, 250), 3, true));
+        txtUpdate.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(250, 250, 250), 5, true));
 
         txtContact.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         txtContact.setForeground(new java.awt.Color(93, 58, 155));
         txtContact.setText("New Contact");
 
         DeleteContact.setBackground(new java.awt.Color(255, 111, 97));
-        DeleteContact.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        DeleteContact.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         DeleteContact.setForeground(new java.awt.Color(250, 250, 250));
         DeleteContact.setText("Delete Contact");
         DeleteContact.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        DeleteContact.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteContactActionPerformed(evt);
+        DeleteContact.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DeleteContactMouseClicked(evt);
             }
         });
 
         btnAddNewContact.setBackground(new java.awt.Color(250, 250, 250));
-        btnAddNewContact.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnAddNewContact.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnAddNewContact.setForeground(new java.awt.Color(255, 111, 97));
         btnAddNewContact.setText("Add New Contact");
         btnAddNewContact.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -194,103 +197,174 @@ public class DisplayAllContacts extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtContact)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAddNewContact, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 744, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(DisplayAllContacsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(NameLabel)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel1)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(PhoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(SearchButton)))
-                                .addGap(2, 2, 2)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGap(261, 261, 261)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(DeleteContact, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(UpdateButton))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGap(89, 89, 89)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(EmailLabel)
-                                .addGap(31, 31, 31)
-                                .addComponent(jLabel3)
-                                .addGap(56, 56, 56)))))
-                .addContainerGap(17, Short.MAX_VALUE))
-        );
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(txtContact)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(btnAddNewContact, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        262, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 744,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                false)
+                                                        .addComponent(DisplayAllContacsButton,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addGroup(jPanel1Layout
+                                                                .createParallelGroup(
+                                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                        .addComponent(NameLabel)
+                                                                        .addGap(47, 47, 47)
+                                                                        .addComponent(jLabel1,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                82,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                        .addComponent(SearchField,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                143,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                        .addComponent(SearchButton))))
+                                                .addGroup(jPanel1Layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addGap(39, 39, 39)
+                                                                .addComponent(PhoneLabel,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 48,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(
+                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                        Short.MAX_VALUE)
+                                                                .addComponent(jLabel2,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 43,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(86, 86, 86)
+                                                                .addComponent(EmailLabel,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 68,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(46, 46, 46)
+                                                                .addComponent(jLabel3,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 105,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(11, 11, 11))
+                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addGap(261, 261, 261)
+                                                                .addGroup(jPanel1Layout.createParallelGroup(
+                                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(DeleteContact,
+                                                                                javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE)
+                                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                                .addComponent(txtUpdate)
+                                                                                .addPreferredGap(
+                                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                .addComponent(UpdateButton)))))))
+                                .addContainerGap(24, Short.MAX_VALUE)));
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtContact)
-                        .addGap(26, 26, 26))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnAddNewContact)
-                        .addGap(18, 18, 18)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SearchButton)
-                    .addComponent(txtUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UpdateButton))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(DeleteContact)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(DisplayAllContacsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addGap(2, 2, 2)))
-                .addGap(12, 12, 12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(PhoneLabel)
-                    .addComponent(jLabel1)
-                    .addComponent(NameLabel)
-                    .addComponent(EmailLabel)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
-        );
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addContainerGap(16, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                                jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(txtContact)
+                                                        .addGap(26, 26, 26))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                                jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(btnAddNewContact)
+                                                        .addGap(18, 18, 18)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(SearchButton)
+                                        .addComponent(txtUpdate, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(UpdateButton))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(DeleteContact)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(DisplayAllContacsButton,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                                .addGap(2, 2, 2)))
+                                .addGap(12, 12, 12)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel2)
+                                        .addComponent(PhoneLabel)
+                                        .addComponent(jLabel1)
+                                        .addComponent(NameLabel)
+                                        .addComponent(EmailLabel)
+                                        .addComponent(jLabel3))
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 203,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(19, 19, 19)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING,
+                                javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.PREFERRED_SIZE));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddNewContactMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddNewContactMouseClicked
+    private void btnAddNewContactMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnAddNewContactMouseClicked
         this.dispose();
         new InsertContact(contacts);
-    }//GEN-LAST:event_btnAddNewContactMouseClicked
+    }// GEN-LAST:event_btnAddNewContactMouseClicked
+
+    private void DeleteContactMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_DeleteContactMouseClicked
+        String phoneNumberToDelete = txtUpdate.getText().trim();
+        String loggedInUserID = AuthenticationFunctions.getLoggedInUserID();
+
+        // Step 1: Check if the phone number field is empty
+        if (phoneNumberToDelete.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Phone number field cannot be empty.", "No phone number",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Step 2: Search for the contact in the linked list
+        Contact contactToDelete = contacts.linearSearchNumber(phoneNumberToDelete, loggedInUserID);
+
+        // Step 3: Remove the contact from the linked list
+        boolean isDeleted = contacts.deleteContact(contactToDelete.getPhoneNumber(), loggedInUserID);
+
+        if (isDeleted) {
+            // Step 4: Call the existing updateContactInCSV method to rewrite the CSV file
+            AuthenticationFunctions.updateContactInCSV(contacts, null, "src/storage/contact.csv");
+
+            JOptionPane.showMessageDialog(null, "Contact successfully deleted!", "Success",
+                    JOptionPane.INFORMATION_MESSAGE);
+            TextArea.setText("");
+        } else {
+            JOptionPane.showMessageDialog(null, "Failed to delete the contact.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }// GEN-LAST:event_DeleteContactMouseClicked
 
     private void TextAreaAncestorAdded(javax.swing.event.AncestorEvent evt) {// GEN-FIRST:event_TextAreaAncestorAdded
         TextArea.setEditable(false);
@@ -336,10 +410,11 @@ public class DisplayAllContacts extends javax.swing.JFrame {
 
         if (contactToUpdate != null) {
             this.dispose(); // Close the current JFrame
-            // If contact exists, open UpdateContacts JFrame and pass the necessary arguments
+            // If contact exists, open UpdateContacts JFrame and pass the necessary
+            // arguments
             new UpdateContact(contacts, contactToUpdate, loggedInUserID);
-            
-        } 
+
+        }
     }// GEN-LAST:event_UpdateButtonMouseClicked
 
     /*
