@@ -39,6 +39,7 @@ public class LinkedList {
 
     public void displayContacts(JTextArea textArea, LinkedList contacts) {
         if (head != null) {
+            contacts.sort();
             Node temp = head;
             while (temp != null) {
                 textArea.append(contacts.toString(temp) + "\n"); // Append each contact to the TextArea
@@ -64,14 +65,14 @@ public class LinkedList {
     public String toString(Node node) {
 
         return " " +
-
-                " " + node.contact.getFirstName() + '\'' +
-                " \t\t" + node.contact.getLastName() + '\'' +
-                " \t" + node.contact.getPhoneNumber() + '\'' +
-                " \t" + node.contact.getEmail() + '\'' +
-                " \t" + node.contact.getAddress() + '\'' +
-                " \t" + node.contact.getContactGroup() + '\'';
-
+                
+                " " + node.contact.getFirstName() + 
+                " \t" + node.contact.getLastName() + 
+                " \t" + node.contact.getPhoneNumber() + 
+                " \t" + node.contact.getEmail() + 
+                " \t" + node.contact.getAddress() + 
+                " \t" + node.contact.getContactGroup();
+        
     }
 
     // sorting the linked list by using Merge Sort
@@ -94,11 +95,9 @@ public class LinkedList {
         return sortedMerge(left, right);
     }
 
-    private Node sortedMerge(Node left, Node right) {
-        if (left == null)
-            return right;
-        if (right == null)
-            return left;
+    public Node sortedMerge(Node left, Node right) {
+        if (left == null) return right;
+        if (right == null) return left;
 
         Node result;
         if (left.contact.getFirstName().compareTo(right.contact.getFirstName()) <= 0) {
