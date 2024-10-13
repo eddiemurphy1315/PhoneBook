@@ -1,6 +1,7 @@
 package validations;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -14,6 +15,8 @@ import java.util.UUID;
 import javax.swing.JOptionPane;
 
 import model.Contact;
+import phonebook.LinkedList;
+import phonebook.LinkedList.Node;
 
 public class AuthenticationFunctions {
     private static String loggedInUserID;
@@ -333,6 +336,35 @@ public class AuthenticationFunctions {
             JOptionPane.showMessageDialog(null, "Error reading contact file.", "File Error", JOptionPane.ERROR_MESSAGE);
         }
         return false; // No duplicate found
+    }
+
+    public static void updateContactInCSV(LinkedList contacts, Contact updatedContact, String filePath) {
+        String header = "contactID,firstName,lastName,phoneNumber,email,address,contactGroup,userID";
+
+    try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
+        // Write the header
+        bw.write(header);
+        bw.newLine();
+
+        // Iterate through the linked list and write each contact
+        LinkedList.Node current = contacts.head; // Starting at the head of the list
+        while (current != null) {
+            Contact contact = current.contact;
+            String contactLine = contact.getContactID() + "," + contact.getFirstName() + ","
+                    + contact.getLastName() + "," + contact.getPhoneNumber() + ","
+                    + contact.getEmail() + "," + contact.getAddress() + ","
+                    + contact.getContactGroup() + "," + contact.getUserID();
+
+            // Write the contact to the file
+            bw.write(contactLine);
+            bw.newLine();
+
+            // Move to the next node in the linked list
+            current = current.next;
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
     }
 
     public static void setLoggedInUserID(String loggedInUserID) {

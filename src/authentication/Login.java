@@ -206,7 +206,6 @@ public class Login extends javax.swing.JFrame {
             // Load the contacts from the CSV file based on the logged-in userID
             LinkedList contacts = LinkedList.loadContactsForUser("src/storage/contact.csv", loggedInUserID);
 
-            contacts.displayContactsConsole(contacts);
             // Proceed to the next screen (e.g., dispose of the login screen, open a dashboard)
             this.dispose();  // Close the login window
             new InsertContact(contacts);
