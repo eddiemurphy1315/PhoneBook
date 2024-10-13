@@ -94,8 +94,8 @@ public class Contact {
                 
                 " " + firstName +
                 " \t\t" + lastName +
-                " \t" + phoneNumber +
-                " \t" + email +
+                " \t\t" + phoneNumber +
+                " \t\t" + email +
                 " \t" + address +
                 " \t" + contactGroup;
     }

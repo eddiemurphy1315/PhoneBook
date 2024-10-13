@@ -1,2 +1,6 @@
-contactID,firstName,lastName,phoneNumber,email,address,contactGroup,userID
-c7b08f9e-d78d-46f2-aad1-47366ffce13b,Martha,Mathew,+264816474352,marthamathew@gmail.com,StudentStay,Test,3
+contactID, firstName, lastName, phoneNumber, email, address, contactGroup, userID
+a241ec37-a10f-44ed-be75-cb44e651a8d5,Eurico,Dande,+224991356035,euricodande12@gmail,Windhoek West,Friend,3
+1af973fe-a750-4409-b7fc-fb1fd2db6d42,Murphy,Sisamu,+264813750754,murphysisamu1315@gmail,Windhoek,Friend,3
+c7b08f9e-d78d-46f2-aad1-47366ffce13b,Martha,Mathew,+264816474352,marthamathew@gmail.com,StudentStay,Friend,3
+693e97a4-1f15-40de-81f0-5201db24c38b,Klaus,Sisamu,+264853535449,klaussisamu1807@gamail.com,Swakop,Family,2
+a8641b0b-b67b-4f63-a9dc-4078b8bcc425,Klaus,Sisamu,+264853535449,klaussisamu1807@gamail.com,Swakop,Family,2
