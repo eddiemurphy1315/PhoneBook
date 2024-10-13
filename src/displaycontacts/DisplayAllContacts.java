@@ -102,13 +102,13 @@ public class DisplayAllContacts extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TextArea);
 
-        NameLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        NameLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         NameLabel.setText(" First Name");
 
-        PhoneLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        PhoneLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         PhoneLabel.setText("Phone");
 
-        EmailLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        EmailLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         EmailLabel.setText("Address");
 
         SearchField.setBackground(new java.awt.Color(250, 250, 250));
@@ -152,13 +152,13 @@ public class DisplayAllContacts extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText(" Last Name");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Email");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("Contact Group");
 
         txtUpdate.setBackground(new java.awt.Color(250, 250, 250));
@@ -206,35 +206,37 @@ public class DisplayAllContacts extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(DisplayAllContacsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(NameLabel)
-                                    .addGap(47, 47, 47)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(SearchButton))))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(39, 39, 39)
-                                .addComponent(PhoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(86, 86, 86)
-                                .addComponent(EmailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(46, 46, 46)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(11, 11, 11))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(NameLabel)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel1)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(PhoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(SearchButton)))
+                                .addGap(2, 2, 2)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGap(261, 261, 261)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(DeleteContact, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(txtUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(UpdateButton)))))))
-                .addContainerGap(19, Short.MAX_VALUE))
+                                        .addComponent(UpdateButton))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGap(89, 89, 89)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(EmailLabel)
+                                .addGap(31, 31, 31)
+                                .addComponent(jLabel3)
+                                .addGap(56, 56, 56)))))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -266,8 +268,8 @@ public class DisplayAllContacts extends javax.swing.JFrame {
                     .addComponent(NameLabel)
                     .addComponent(EmailLabel)
                     .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
         );
 
@@ -296,23 +298,11 @@ public class DisplayAllContacts extends javax.swing.JFrame {
 
     private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_SearchButtonActionPerformed
         String searchQuery = SearchField.getText().trim();
-        boolean found = false;
-
+       
         // Clear TextArea before showing new result
         TextArea.setText("");
-        Iterable<Contact> contactList = null;
-
-        // Search through the contact list
-        for (Contact contact : contactList) {
-            if (contact.getFirstName().equalsIgnoreCase(searchQuery) || contact.getPhoneNumber().equals(searchQuery)) {
-                TextArea.setText(contact.toString());
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
-            TextArea.setText("Contact not found!");
-        }
+        contacts.linearSearchName(searchQuery, TextArea);
+   
     }// GEN-LAST:event_SearchButtonActionPerformed
 
     private void DisplayAllContacsButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_DisplayAllContacsButtonActionPerformed

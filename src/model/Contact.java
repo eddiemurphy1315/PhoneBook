@@ -92,12 +92,12 @@ public class Contact {
     public String toString() {
         return " " +
                 
-                " " + firstName + '\'' +
-                " \t\t" + lastName + '\'' +
-                " \t" + phoneNumber + '\'' +
-                " \t" + email + '\'' +
-                " \t" + address + '\'' +
-                " \t" + contactGroup + '\'';
+                " " + firstName +
+                " \t\t" + lastName +
+                " \t" + phoneNumber +
+                " \t" + email +
+                " \t" + address +
+                " \t" + contactGroup;
     }
 }
 

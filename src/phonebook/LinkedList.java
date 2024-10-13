@@ -43,7 +43,7 @@ public class LinkedList {
             contacts.sort();
             Node temp = head;
             while (temp != null) {
-                textArea.append(contacts.toString(temp) + "\n"); // Append each contact to the TextArea
+                textArea.setText(contacts.toString(temp) + "\n"); // Append each contact to the TextArea
                 temp = temp.next;
             }
         } else {
@@ -65,14 +65,14 @@ public class LinkedList {
 
     public String toString(Node node) {
 
-        return " " +
+        return "  " +
                 
-                " " + node.contact.getFirstName() + 
-                " \t" + node.contact.getLastName() + 
-                " \t" + node.contact.getPhoneNumber() + 
-                " \t" + node.contact.getEmail() + 
-                " \t" + node.contact.getAddress() + 
-                " \t" + node.contact.getContactGroup();
+                "  " + node.contact.getFirstName() + 
+                "\t" + node.contact.getLastName() + 
+                "\t" + node.contact.getPhoneNumber() + 
+                "\t" + node.contact.getEmail() + 
+                "\t\t" + node.contact.getAddress() + 
+                "\t" + node.contact.getContactGroup();
         
     }
 
@@ -165,19 +165,31 @@ public class LinkedList {
     }
 
     //When displaying
-    public Node linearSearchName(String name){
+    public LinkedList linearSearchName(String name, JTextArea textArea){
+        LinkedList results = new LinkedList();
+        int count = 0;
         if (isEmpty()){
             JOptionPane.showMessageDialog(null, "The list is empty.", "No contacts", JOptionPane.INFORMATION_MESSAGE);
             return null;
         } else {
             var temp = this.head;
             while (temp != null){
-                if(temp.contact.getFirstName().equals(name) || temp.contact.getLastName().equals(name))     
-                    return temp;
+                if(temp.contact.getFirstName().equals(name) || temp.contact.getLastName().equals(name)){
+                    textArea.setText(temp.contact.toString());
+                    results.insertContact(temp.contact);
+                }     
+                    
                     
                 temp = temp.next;
+                count++;
             }
-            return null;
+            if(count == 0){
+                return null;
+            }
+            else{
+                return results;
+            }
+            
         }
     }
 
