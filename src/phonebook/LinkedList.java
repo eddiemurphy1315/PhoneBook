@@ -1,16 +1,20 @@
 package phonebook;
 
-import java.awt.TextArea;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import model.Contact;
 
 public class LinkedList {
-    //Fields definition
+    // Fields definition
     Node head = null;
     Node tail = null;
     int length = 0;
 
-    //Node class
+    // Node class
     private class Node {
         private Contact contact;
         private Node next;
@@ -33,28 +37,41 @@ public class LinkedList {
         this.length = length + 1;
     }
 
-    public void displayContacts(JTextArea textArea, LinkedList contacts){
+    public void displayContacts(JTextArea textArea, LinkedList contacts) {
         if (head != null) {
             Node temp = head;
             while (temp != null) {
-                textArea.append(contacts.toString(temp) + "\n"); //Append each contact to the TextArea
+                textArea.append(contacts.toString(temp) + "\n"); // Append each contact to the TextArea
                 temp = temp.next;
             }
         } else {
             System.out.println("No contacts found");
         }
     }
-    public  String toString(Node node){
-        
+
+    public void displayContactsConsole(LinkedList contacts) {
+        if (head != null) {
+            Node temp = head;
+            while (temp != null) {
+                System.out.println(temp.contact.getFirstName() +" "+ temp.contact.getLastName() + " " + temp.contact.getPhoneNumber() + "\n"); // Append each contact to the TextArea
+                temp = temp.next;
+            }
+        } else {
+            System.out.println("No contacts found");
+        }
+    }
+
+    public String toString(Node node) {
+
         return " " +
-                
+
                 " " + node.contact.getFirstName() + '\'' +
                 " \t\t" + node.contact.getLastName() + '\'' +
                 " \t" + node.contact.getPhoneNumber() + '\'' +
                 " \t" + node.contact.getEmail() + '\'' +
                 " \t" + node.contact.getAddress() + '\'' +
                 " \t" + node.contact.getContactGroup() + '\'';
-        
+
     }
 
     // sorting the linked list by using Merge Sort
@@ -78,11 +95,13 @@ public class LinkedList {
     }
 
     private Node sortedMerge(Node left, Node right) {
-        if (left == null) return right;
-        if (right == null) return left;
+        if (left == null)
+            return right;
+        if (right == null)
+            return left;
 
         Node result;
-        if (left.contact.firstName.compareTo(right.contact.firstName) <= 0) {
+        if (left.contact.getFirstName().compareTo(right.contact.getFirstName()) <= 0) {
             result = left;
             result.next = sortedMerge(left.next, right);
         } else {
@@ -93,7 +112,8 @@ public class LinkedList {
     }
 
     private Node getMiddle(Node head) {
-        if (head == null) return head;
+        if (head == null)
+            return head;
 
         Node slow = head, fast = head.next;
         while (fast != null && fast.next != null) {
@@ -101,6 +121,47 @@ public class LinkedList {
             fast = fast.next.next;
         }
         return slow;
+    }
+
+    // Function to load contacts for a specific user from a CSV file
+    public static LinkedList loadContactsForUser(String filePath, String userID) {
+        LinkedList contacts = new LinkedList();
+        File file = new File(filePath);
+
+        try (Scanner scan = new Scanner(file)) {
+            // Skip the first line (header)
+            if (scan.hasNextLine()) {
+                scan.nextLine();
+            }
+
+            // Read each line and add contacts that match the logged-in user's userID
+            while (scan.hasNextLine()) {
+                String line = scan.nextLine();
+                String[] contactDetails = line.split(",");
+
+                // Check if this contact belongs to the logged-in user
+                if (contactDetails.length >= 8 && contactDetails[7].trim().equals(userID)) {
+                    // Create a new Contact object and add it to the list
+                    Contact contact = new Contact(
+                            contactDetails[0].trim(), // contactID
+                            contactDetails[1].trim(), // firstName
+                            contactDetails[2].trim(), // lastName
+                            contactDetails[3].trim(), // phoneNumber
+                            contactDetails[4].trim(), // email
+                            contactDetails[5].trim(), // address
+                            contactDetails[6].trim(), // contactGroup
+                            contactDetails[7].trim() // userID
+                    );
+                    contacts.insertContact(contact); // Add the contact to the LinkedList
+                }
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error: Contacts file not found!", "File Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+
+        return contacts; // Return the LinkedList of contacts for the user
     }
 }
 
