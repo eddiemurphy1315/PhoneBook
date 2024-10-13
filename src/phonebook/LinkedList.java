@@ -51,18 +51,6 @@ public class LinkedList {
         }
     }
 
-    public void displayContactsConsole(LinkedList contacts) {
-        if (head != null) {
-            Node temp = head;
-            while (temp != null) {
-                System.out.println(temp.contact.getFirstName() +" "+ temp.contact.getLastName() + " " + temp.contact.getPhoneNumber() + "\n"); // Append each contact to the TextArea
-                temp = temp.next;
-            }
-        } else {
-            System.out.println("No contacts found");
-        }
-    }
-
     public String toString(Node node) {
 
         return " " +
@@ -198,6 +186,40 @@ public class LinkedList {
             JOptionPane.showMessageDialog(null, "The contact is not in the list.", "Not found", JOptionPane.INFORMATION_MESSAGE);
             return null;
         }
+    }
+
+    public boolean deleteContact(String phoneNumber, String userID) {
+        if (head == null) {
+            return false; // The list is empty, nothing to delete
+        }
+    
+        // Special case: deleting the head (first contact)
+        if (head.contact.getPhoneNumber().equals(phoneNumber) && head.contact.getUserID().equals(userID)) {
+            head = head.next;
+            length--;
+            return true;
+        }
+    
+        // Traverse the list to find and delete the target contact
+        Node current = head;
+        Node prev = null;
+    
+        while (current != null) {
+            if (current.contact.getPhoneNumber().equals(phoneNumber) && current.contact.getUserID().equals(userID)) {
+                // Found the contact to delete
+                prev.next = current.next; // Remove the node
+                length--;
+                
+                return true;
+            }
+            prev = current;
+            current = current.next;
+        }
+        
+
+
+        // If contact was not found
+        return false;
     }
 
     private boolean isEmpty(){
