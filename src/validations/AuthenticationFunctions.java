@@ -1,7 +1,9 @@
 package validations;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.security.MessageDigest;
@@ -309,6 +311,28 @@ public class AuthenticationFunctions {
     public static String generateUniqueContactID() {
         // A function to generate a unique contact ID
         return UUID.randomUUID().toString();
+    }
+
+    public static boolean isPhoneNumberDuplicate(String phoneNumber, String loggedInUserID) {
+        String csvFilePath = "src/storage/contact.csv"; // Adjust path if needed
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] contactDetails = line.split(",");
+                if (contactDetails.length >= 8) {
+                    String contactPhoneNumber = contactDetails[3].trim();
+                    String contactUserID = contactDetails[7].trim();
+
+                    // Check if the phone number belongs to the same logged-in user
+                    if (contactPhoneNumber.equals(phoneNumber) && contactUserID.equals(loggedInUserID)) {
+                        return true; // Duplicate found
+                    }
+                }
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Error reading contact file.", "File Error", JOptionPane.ERROR_MESSAGE);
+        }
+        return false; // No duplicate found
     }
 
     public static void setLoggedInUserID(String loggedInUserID) {

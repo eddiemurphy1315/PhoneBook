@@ -1,6 +1,5 @@
 package authentication;
 
-import displaycontacts.DisplayAllContacts;
 import insertcontact.InsertContact;
 
 import javax.swing.JOptionPane;
